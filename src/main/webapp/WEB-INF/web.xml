@@ -3,6 +3,27 @@
 
   <display-name>Archetype Created Web Application</display-name>
 
+
+    <!-- 编码过虑 -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+
     <!-- Spring 配置 -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
@@ -22,6 +43,8 @@
          <init-param>
              <param-name>contextConfigLocation</param-name>
              <param-value>/WEB-INF/spring-servlet.xml</param-value>&nbsp; 默认
+			 或者加载classpath目录
+			 <param-value>classpath:spring-mvc.xml</param-value>
          </init-param>
       -->
   </servlet>
@@ -46,5 +69,6 @@
         <location>/WEB-INF/common/403.jsp</location>
     </error-page>
     <!-- end -->
+
 
 </web-app>
