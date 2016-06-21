@@ -1,5 +1,7 @@
 package com.taobao.enity;
 
+import java.util.Arrays;
+
 /**
  * Created by xiangyang.laixiang on 2016/6/17.
  */
@@ -7,15 +9,24 @@ public class User {
 
     private String userName;
     private int age;
+    private String[] mySelects;
 
     public User() {
     }
 
-    ;
-
-    public User(String userName, int age) {
+    public User(String[] mySelects, String userName, int age) {
+        this.mySelects = mySelects;
         this.userName = userName;
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userName='" + userName + '\'' +
+                ", age=" + age +
+                ", mySelects=" + Arrays.toString(mySelects) +
+                '}';
     }
 
     public String getUserName() {
@@ -34,11 +45,12 @@ public class User {
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userName='" + userName + '\'' +
-                ", age=" + age +
-                '}';
+
+    public String[] getMySelects() {
+        return mySelects;
+    }
+
+    public void setMySelects(String[] mySelects) {
+        this.mySelects = mySelects;
     }
 }

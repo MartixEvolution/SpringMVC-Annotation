@@ -4,7 +4,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <body>
-<form action="${pageContext.request.contextPath}/base/path.do">
+<form action="${pageContext.request.contextPath}/base/path.do" method="post">
     <input type="text" name="userName">
     <input type="text" name="password">
     <input type="submit" value="login">

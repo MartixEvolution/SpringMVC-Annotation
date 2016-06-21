@@ -14,10 +14,12 @@
     <logger name="com.taobao.biz" level="debug"
             additivity="false">
         <appender-ref ref="STDOUT" />
+        <charset>UTF-8</charset>
     </logger>
 
     <root level="error">
         <appender-ref ref="STDOUT" />
+        <charset>UTF-8</charset>
     </root>
 
 </configuration>
